@@ -1,0 +1,947 @@
+{
+    "success": 1,
+    "data": [
+        {
+            "featureInfoArray": [
+                {
+                    "contents": [
+                        "-",
+                        "8:30",
+                        "あり：毎週",
+                        "-"
+                    ],
+                    "title": [
+                        "中学入試(募集)",
+                        "登校時間",
+                        "土曜授業",
+                        "食堂"
+                    ]
+                },
+                {
+                    "contents": [
+                        "○",
+                        "-",
+                        "なし",
+                        "60％"
+                    ],
+                    "title": [
+                        "制服",
+                        "寮",
+                        "帰国生入試",
+                        "クラブ加入率"
+                    ]
+                }
+            ],
+            "courseDataArray": {
+                "courseContentArray": [
+                    "特別進学コース",
+                    "総合進学コース"
+                ],
+                "courseTitleArray": [
+                    "コース"
+                ]
+            },
+            "statusInfoArray": [
+                {
+                    "alt": "私立高校",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/icon_siritsu.gif"
+                },
+                {
+                    "alt": "女子校",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/icon_jyosi.gif"
+                }
+            ],
+            "gradeInfoArray": [
+                {
+                    "alt": "幼稚",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/ass1_off.gif"
+                },
+                {
+                    "alt": "小学",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/ass2_off.gif"
+                },
+                {
+                    "alt": "中学",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/ass3_off.gif"
+                },
+                {
+                    "alt": "大学",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/ass4_off.gif"
+                },
+                {
+                    "alt": "短大",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/ass5_off.gif"
+                },
+                {
+                    "alt": "専門",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/ass6_off.gif"
+                }
+            ],
+            "school_name": "東洋女子高等学校",
+            "map": "https://www.toyojoshi.ac.jp/04_2/",
+            "year_fee": "686400",
+            "entry_fee": "886400",
+            "boy_num": null,
+            "girl_num": 319,
+            "website": "https://www.toyojoshi.ac.jp/",
+            "address": "東京都文京区千石3-29-8",
+            "zipcode": "112-0011",
+            "uniform": "あり",
+            "originalURL": "https://www.studyh.jp/kanto/school/C13P099",
+            "createdAt": "2022-03-31T02:01:32.582Z",
+            "updatedAt": "2022-03-31T09:40:15.192Z",
+            "schoolImage": "https://scontent-nrt1-1.cdninstagram.com/v/t51.2885-15/72669995_539917156810222_8198609742769045100_n.jpg?stp=dst-jpg_e35&_nc_ht=scontent-nrt1-1.cdninstagram.com&_nc_cat=110&_nc_ohc=6VMMkGTWsPcAX8guNd4&edm=ALQROFkBAAAA&ccb=7-4&ig_cache_key=MjE3MTY0MDUzODk3NjA1NDY0Mw%3D%3D.2-ccb7-4&oh=00_AT-tJbZJF049dHju4dKD4GWpBbvnnrQvIP-ObOA1P0un7A&oe=624BF948&_nc_sid=30a2ef",
+            "image": {
+                "__type": "File",
+                "name": "c87392e093adf84c37af670f6e478f14_72669995_539917156810222_8198609742769045100_n.jpeg",
+                "url": "http://localhost:1337/parse/files/Wn8Wb6xt1udbuWyq6adFxBIftrAFcdCv49vwFoHz/c87392e093adf84c37af670f6e478f14_72669995_539917156810222_8198609742769045100_n.jpeg"
+            },
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Toyojoshi_Senior_High_School.JPG",
+            "img_flag": "1",
+            "objectId": "EF5QuNxctR"
+        },
+        {
+            "featureInfoArray": [
+                {
+                    "contents": [
+                        "-",
+                        "8:25",
+                        "あり：毎週",
+                        "-"
+                    ],
+                    "title": [
+                        "中学入試(募集)",
+                        "登校時間",
+                        "土曜授業",
+                        "食堂"
+                    ]
+                },
+                {
+                    "contents": [
+                        "○",
+                        "-",
+                        "なし",
+                        "76％"
+                    ],
+                    "title": [
+                        "制服",
+                        "寮",
+                        "帰国生入試",
+                        "クラブ加入率"
+                    ]
+                }
+            ],
+            "courseDataArray": {
+                "courseContentArray": [
+                    "特別選抜コース",
+                    "特進コース",
+                    "総合進学コース"
+                ],
+                "courseTitleArray": [
+                    "コース"
+                ]
+            },
+            "statusInfoArray": [
+                {
+                    "alt": "私立高校",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/icon_siritsu.gif"
+                },
+                {
+                    "alt": "共学校",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/icon_kyogaku.gif"
+                }
+            ],
+            "gradeInfoArray": [
+                {
+                    "alt": "幼稚",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/ass1_off.gif"
+                },
+                {
+                    "alt": "小学",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/ass2_off.gif"
+                },
+                {
+                    "alt": "中学",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/ass3_off.gif"
+                },
+                {
+                    "alt": "大学",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/ass4_off.gif"
+                },
+                {
+                    "alt": "短大",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/ass5_off.gif"
+                },
+                {
+                    "alt": "専門",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/ass6_off.gif"
+                }
+            ],
+            "school_name": "東洋高等学校",
+            "map": "https://www.toyo.ed.jp/access/",
+            "year_fee": "691490",
+            "entry_fee": "1015490",
+            "boy_num": 396,
+            "girl_num": 425,
+            "website": "https://www.toyo.ed.jp/",
+            "address": "東京都千代田区三崎町1-4-16",
+            "zipcode": "101-0061",
+            "uniform": "あり",
+            "originalURL": "https://www.studyh.jp/kanto/school/C13P098",
+            "createdAt": "2022-03-31T02:01:28.577Z",
+            "updatedAt": "2022-03-31T09:40:15.900Z",
+            "image": {
+                "__type": "File",
+                "name": "b89ddbe6d060c281a8225b2942b6616a_2021-12-23.jpeg",
+                "url": "http://localhost:1337/parse/files/Wn8Wb6xt1udbuWyq6adFxBIftrAFcdCv49vwFoHz/b89ddbe6d060c281a8225b2942b6616a_2021-12-23.jpeg"
+            },
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/01/ToyoHS.jpg",
+            "img_flag": "1",
+            "objectId": "HL0wCbCYQx"
+        },
+        {
+            "featureInfoArray": [
+                {
+                    "contents": [
+                        "-",
+                        "8:40",
+                        "なし",
+                        "-"
+                    ],
+                    "title": [
+                        "中学入試(募集)",
+                        "登校時間",
+                        "土曜授業",
+                        "食堂"
+                    ]
+                },
+                {
+                    "contents": [
+                        "○",
+                        "-",
+                        "なし",
+                        "60％"
+                    ],
+                    "title": [
+                        "制服",
+                        "寮",
+                        "帰国生入試",
+                        "クラブ加入率"
+                    ]
+                }
+            ],
+            "courseDataArray": {
+                "courseContentArray": [
+                    "(普通科)文理コース",
+                    "(普通科)ビジネスコース",
+                    "(電気科)電気コース",
+                    "(電気科)ゲームITコース",
+                    "機械科"
+                ],
+                "courseTitleArray": [
+                    "コース"
+                ]
+            },
+            "statusInfoArray": [
+                {
+                    "alt": "私立高校",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/icon_siritsu.gif"
+                },
+                {
+                    "alt": "共学校",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/icon_kyogaku.gif"
+                }
+            ],
+            "gradeInfoArray": [
+                {
+                    "alt": "幼稚",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/ass1_off.gif"
+                },
+                {
+                    "alt": "小学",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/ass2_off.gif"
+                },
+                {
+                    "alt": "中学",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/ass3_off.gif"
+                },
+                {
+                    "alt": "大学",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/ass4_off.gif"
+                },
+                {
+                    "alt": "短大",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/ass5_off.gif"
+                },
+                {
+                    "alt": "専門",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/ass6_off.gif"
+                }
+            ],
+            "school_name": "東京実業高等学校",
+            "map": "https://www.tojitsu.ed.jp/access/",
+            "year_fee": "493930",
+            "entry_fee": "778930",
+            "boy_num": 1008,
+            "girl_num": 113,
+            "website": "https://www.tojitsu.ed.jp/",
+            "address": "東京都大田区西蒲田8-18-1",
+            "zipcode": "144-0051",
+            "uniform": "あり",
+            "originalURL": "https://www.studyh.jp/kanto/school/C13P089",
+            "createdAt": "2022-03-31T02:00:53.962Z",
+            "updatedAt": "2022-03-31T09:40:21.196Z",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Tokyo_Jitsugyo_High_School_Main_gate2.jpg",
+            "img_flag": "1",
+            "objectId": "TAS18CgZsz"
+        },
+        {
+            "featureInfoArray": [
+                {
+                    "contents": [
+                        "-",
+                        "8:20",
+                        "なし",
+                        "-"
+                    ],
+                    "title": [
+                        "中学入試(募集)",
+                        "登校時間",
+                        "土曜授業",
+                        "食堂"
+                    ]
+                },
+                {
+                    "contents": [
+                        "○",
+                        "-",
+                        "なし",
+                        "-"
+                    ],
+                    "title": [
+                        "制服",
+                        "寮",
+                        "帰国生入試",
+                        "クラブ加入率"
+                    ]
+                }
+            ],
+            "courseDataArray": {
+                "courseContentArray": [
+                    "音楽科"
+                ],
+                "courseTitleArray": [
+                    "コース"
+                ]
+            },
+            "statusInfoArray": [
+                {
+                    "alt": "私立高校",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/icon_siritsu.gif"
+                },
+                {
+                    "alt": "共学校",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/icon_kyogaku.gif"
+                }
+            ],
+            "gradeInfoArray": [
+                {
+                    "alt": "幼稚",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/ass1_on.gif"
+                },
+                {
+                    "alt": "小学",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/ass2_off.gif"
+                },
+                {
+                    "alt": "中学",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/ass3_off.gif"
+                },
+                {
+                    "alt": "大学",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/ass4_on.gif"
+                },
+                {
+                    "alt": "短大",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/ass5_off.gif"
+                },
+                {
+                    "alt": "専門",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/ass6_off.gif"
+                }
+            ],
+            "school_name": "東京音楽大学付属高等学校",
+            "map": "https://www.tcm-koko.ed.jp/accessmap.html",
+            "year_fee": "835000",
+            "entry_fee": "955000",
+            "boy_num": 39,
+            "girl_num": 153,
+            "website": "https://www.tcm-koko.ed.jp/",
+            "address": "東京都文京区関口3-12-1",
+            "zipcode": "112-0014",
+            "uniform": "あり",
+            "originalURL": "https://www.studyh.jp/kanto/school/C13P085",
+            "createdAt": "2022-03-31T02:00:39.739Z",
+            "updatedAt": "2022-03-31T09:40:23.262Z",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Tokyo_College_of_Music_High_School_2020~.jpg",
+            "img_flag": "1",
+            "objectId": "ncqnEi11RQ"
+        },
+        {
+            "featureInfoArray": [
+                {
+                    "contents": [
+                        "-",
+                        "8:25",
+                        "あり：毎週",
+                        "○"
+                    ],
+                    "title": [
+                        "中学入試(募集)",
+                        "登校時間",
+                        "土曜授業",
+                        "食堂"
+                    ]
+                },
+                {
+                    "contents": [
+                        "○",
+                        "-",
+                        "なし",
+                        "87％"
+                    ],
+                    "title": [
+                        "制服",
+                        "寮",
+                        "帰国生入試",
+                        "クラブ加入率"
+                    ]
+                }
+            ],
+            "courseDataArray": {
+                "courseContentArray": [
+                    "普通科"
+                ],
+                "courseTitleArray": [
+                    "コース"
+                ]
+            },
+            "statusInfoArray": [
+                {
+                    "alt": "私立高校",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/icon_siritsu.gif"
+                },
+                {
+                    "alt": "共学校",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/icon_kyogaku.gif"
+                }
+            ],
+            "gradeInfoArray": [
+                {
+                    "alt": "幼稚",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/ass1_off.gif"
+                },
+                {
+                    "alt": "小学",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/ass2_off.gif"
+                },
+                {
+                    "alt": "中学",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/ass3_off.gif"
+                },
+                {
+                    "alt": "大学",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/ass4_off.gif"
+                },
+                {
+                    "alt": "短大",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/ass5_off.gif"
+                },
+                {
+                    "alt": "専門",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/ass6_off.gif"
+                }
+            ],
+            "school_name": "東京高等学校",
+            "map": "https://tokyo-hs.jp/?page_id=37",
+            "year_fee": "-",
+            "entry_fee": "-",
+            "boy_num": 540,
+            "girl_num": 530,
+            "website": "https://tokyo-hs.jp/",
+            "address": "東京都大田区鵜の木2-39-1",
+            "zipcode": "146-0091",
+            "uniform": "あり",
+            "originalURL": "https://www.studyh.jp/kanto/school/C13P084",
+            "createdAt": "2022-03-31T02:00:35.744Z",
+            "updatedAt": "2022-03-31T09:40:23.905Z",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/34/Tokyo_High_School.jpg",
+            "img_flag": "1",
+            "objectId": "yjR64Hj79a"
+        },
+        {
+            "featureInfoArray": [
+                {
+                    "contents": [
+                        "-",
+                        "8:30",
+                        "あり：毎週",
+                        "○"
+                    ],
+                    "title": [
+                        "中学入試(募集)",
+                        "登校時間",
+                        "土曜授業",
+                        "食堂"
+                    ]
+                },
+                {
+                    "contents": [
+                        "○",
+                        "-",
+                        "なし",
+                        "100％"
+                    ],
+                    "title": [
+                        "制服",
+                        "寮",
+                        "帰国生入試",
+                        "クラブ加入率"
+                    ]
+                }
+            ],
+            "courseDataArray": {
+                "courseContentArray": [
+                    "特進コース",
+                    "総合選抜コース"
+                ],
+                "courseTitleArray": [
+                    "コース"
+                ]
+            },
+            "statusInfoArray": [
+                {
+                    "alt": "私立高校",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/icon_siritsu.gif"
+                },
+                {
+                    "alt": "共学校",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/icon_kyogaku.gif"
+                }
+            ],
+            "gradeInfoArray": [
+                {
+                    "alt": "幼稚",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/ass1_off.gif"
+                },
+                {
+                    "alt": "小学",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/ass2_off.gif"
+                },
+                {
+                    "alt": "中学",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/ass3_off.gif"
+                },
+                {
+                    "alt": "大学",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/ass4_off.gif"
+                },
+                {
+                    "alt": "短大",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/ass5_off.gif"
+                },
+                {
+                    "alt": "専門",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/ass6_off.gif"
+                }
+            ],
+            "school_name": "東亜学園高等学校",
+            "map": "https://toagakuen.ac.jp/access/",
+            "year_fee": "865000",
+            "entry_fee": "1115000",
+            "boy_num": 662,
+            "girl_num": 377,
+            "website": "https://toagakuen.ac.jp/",
+            "address": "東京都中野区上高田5-44-3",
+            "zipcode": "164-0002",
+            "uniform": "あり",
+            "originalURL": "https://www.studyh.jp/kanto/school/C13P082",
+            "createdAt": "2022-03-31T02:00:27.266Z",
+            "updatedAt": "2022-03-31T09:40:25.173Z",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/1b/ToaGakuen_Highschool.JPG",
+            "img_flag": "1",
+            "objectId": "8elKm6JtGV"
+        },
+        {
+            "featureInfoArray": [
+                {
+                    "contents": [
+                        "-",
+                        "8:35",
+                        "あり：毎週",
+                        "○"
+                    ],
+                    "title": [
+                        "中学入試(募集)",
+                        "登校時間",
+                        "土曜授業",
+                        "食堂"
+                    ]
+                },
+                {
+                    "contents": [
+                        "○",
+                        "-",
+                        "あり",
+                        "80％"
+                    ],
+                    "title": [
+                        "制服",
+                        "寮",
+                        "帰国生入試",
+                        "クラブ加入率"
+                    ]
+                }
+            ],
+            "courseDataArray": {
+                "courseContentArray": [
+                    "普通科"
+                ],
+                "courseTitleArray": [
+                    "コース"
+                ]
+            },
+            "statusInfoArray": [
+                {
+                    "alt": "私立高校",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/icon_siritsu.gif"
+                },
+                {
+                    "alt": "共学校",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/icon_kyogaku.gif"
+                }
+            ],
+            "gradeInfoArray": [
+                {
+                    "alt": "幼稚",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/ass1_off.gif"
+                },
+                {
+                    "alt": "小学",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/ass2_off.gif"
+                },
+                {
+                    "alt": "中学",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/ass3_off.gif"
+                },
+                {
+                    "alt": "大学",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/ass4_on.gif"
+                },
+                {
+                    "alt": "短大",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/ass5_off.gif"
+                },
+                {
+                    "alt": "専門",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/ass6_off.gif"
+                }
+            ],
+            "school_name": "中央大学杉並高等学校",
+            "map": "http://www.chusugi.jp/access/index.html",
+            "year_fee": "812400",
+            "entry_fee": "1117400",
+            "boy_num": 560,
+            "girl_num": 448,
+            "website": "http://www.chusugi.jp/",
+            "address": "東京都杉並区今川2-7-1",
+            "zipcode": "167-0035",
+            "uniform": "あり",
+            "originalURL": "https://www.studyh.jp/kanto/school/C13P078",
+            "createdAt": "2022-03-31T02:00:13.476Z",
+            "updatedAt": "2022-03-31T09:40:27.078Z",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/88/Chuo_University_Suginami_High_School.JPG",
+            "img_flag": "1",
+            "objectId": "EJo5LTLfAF"
+        },
+        {
+            "featureInfoArray": [
+                {
+                    "contents": [
+                        "-",
+                        "9:20",
+                        "あり：毎週",
+                        "○"
+                    ],
+                    "title": [
+                        "中学入試(募集)",
+                        "登校時間",
+                        "土曜授業",
+                        "食堂"
+                    ]
+                },
+                {
+                    "contents": [
+                        "○",
+                        "-",
+                        "なし",
+                        "90％"
+                    ],
+                    "title": [
+                        "制服",
+                        "寮",
+                        "帰国生入試",
+                        "クラブ加入率"
+                    ]
+                }
+            ],
+            "courseDataArray": {
+                "courseContentArray": [
+                    "普通科"
+                ],
+                "courseTitleArray": [
+                    "コース"
+                ]
+            },
+            "statusInfoArray": [
+                {
+                    "alt": "私立高校",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/icon_siritsu.gif"
+                },
+                {
+                    "alt": "共学校",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/icon_kyogaku.gif"
+                }
+            ],
+            "gradeInfoArray": [
+                {
+                    "alt": "幼稚",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/ass1_off.gif"
+                },
+                {
+                    "alt": "小学",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/ass2_off.gif"
+                },
+                {
+                    "alt": "中学",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/ass3_off.gif"
+                },
+                {
+                    "alt": "大学",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/ass4_on.gif"
+                },
+                {
+                    "alt": "短大",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/ass5_off.gif"
+                },
+                {
+                    "alt": "専門",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/ass6_off.gif"
+                }
+            ],
+            "school_name": "中央大学高等学校",
+            "map": "https://www.cu-hs.chuo-u.ac.jp/access/",
+            "year_fee": "801000",
+            "entry_fee": "1110500",
+            "boy_num": 225,
+            "girl_num": 260,
+            "website": "https://www.cu-hs.chuo-u.ac.jp/",
+            "address": "東京都文京区春日1-13-27",
+            "zipcode": "112-8551",
+            "uniform": "あり",
+            "originalURL": "https://www.studyh.jp/kanto/school/C13P077",
+            "createdAt": "2022-03-31T02:00:09.260Z",
+            "updatedAt": "2022-03-31T09:40:27.654Z",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/fb/Chuo_University_High_School%2C_Tokyo_03.jpg",
+            "img_flag": "1",
+            "objectId": "TNUyNz6GRw"
+        },
+        {
+            "featureInfoArray": [
+                {
+                    "contents": [
+                        "-",
+                        "8:30",
+                        "なし",
+                        "-"
+                    ],
+                    "title": [
+                        "中学入試(募集)",
+                        "登校時間",
+                        "土曜授業",
+                        "食堂"
+                    ]
+                },
+                {
+                    "contents": [
+                        "○",
+                        "-",
+                        "なし",
+                        "60％"
+                    ],
+                    "title": [
+                        "制服",
+                        "寮",
+                        "帰国生入試",
+                        "クラブ加入率"
+                    ]
+                }
+            ],
+            "courseDataArray": {
+                "courseContentArray": [
+                    "普通科",
+                    "商業科"
+                ],
+                "courseTitleArray": [
+                    "コース"
+                ]
+            },
+            "statusInfoArray": [
+                {
+                    "alt": "私立高校",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/icon_siritsu.gif"
+                },
+                {
+                    "alt": "共学校",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/icon_kyogaku.gif"
+                }
+            ],
+            "gradeInfoArray": [
+                {
+                    "alt": "幼稚",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/ass1_off.gif"
+                },
+                {
+                    "alt": "小学",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/ass2_off.gif"
+                },
+                {
+                    "alt": "中学",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/ass3_off.gif"
+                },
+                {
+                    "alt": "大学",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/ass4_on.gif"
+                },
+                {
+                    "alt": "短大",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/ass5_off.gif"
+                },
+                {
+                    "alt": "専門",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/ass6_off.gif"
+                }
+            ],
+            "school_name": "中央学院大学中央高等学校",
+            "map": "http://www.cguch.ed.jp/contents/access/index.html",
+            "year_fee": "662000",
+            "entry_fee": "986000",
+            "boy_num": 228,
+            "girl_num": 134,
+            "website": "http://www.cguch.ed.jp/",
+            "address": "東京都江東区亀戸7-65-12",
+            "zipcode": "136-0071",
+            "uniform": "あり",
+            "originalURL": "https://www.studyh.jp/kanto/school/C13P076",
+            "createdAt": "2022-03-31T02:00:05.091Z",
+            "updatedAt": "2022-03-31T09:40:28.320Z",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Chuo_Gakuin_University_Chuo_High_School.JPG",
+            "img_flag": "1",
+            "objectId": "FE5ReeK7Dl"
+        },
+        {
+            "featureInfoArray": [
+                {
+                    "contents": [
+                        "-",
+                        "8:25",
+                        "あり：毎週",
+                        "○"
+                    ],
+                    "title": [
+                        "中学入試(募集)",
+                        "登校時間",
+                        "土曜授業",
+                        "食堂"
+                    ]
+                },
+                {
+                    "contents": [
+                        "○",
+                        "-",
+                        "なし",
+                        "70％"
+                    ],
+                    "title": [
+                        "制服",
+                        "寮",
+                        "帰国生入試",
+                        "クラブ加入率"
+                    ]
+                }
+            ],
+            "courseDataArray": {
+                "courseContentArray": [
+                    "特別進学クラス",
+                    "選抜進学クラス",
+                    "進学クラス"
+                ],
+                "courseTitleArray": [
+                    "コース"
+                ]
+            },
+            "statusInfoArray": [
+                {
+                    "alt": "私立高校",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/icon_siritsu.gif"
+                },
+                {
+                    "alt": "共学校",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/icon_kyogaku.gif"
+                }
+            ],
+            "gradeInfoArray": [
+                {
+                    "alt": "幼稚",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/ass1_on.gif"
+                },
+                {
+                    "alt": "小学",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/ass2_off.gif"
+                },
+                {
+                    "alt": "中学",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/ass3_off.gif"
+                },
+                {
+                    "alt": "大学",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/ass4_on.gif"
+                },
+                {
+                    "alt": "短大",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/ass5_off.gif"
+                },
+                {
+                    "alt": "専門",
+                    "src": "https://www.studyh.jp/kanto/school/share/images/ass6_on.gif"
+                }
+            ],
+            "school_name": "大東文化大学第一高等学校",
+            "map": "https://www.daito.ac.jp/ichiko/access/",
+            "year_fee": "602000",
+            "entry_fee": "852000",
+            "boy_num": 631,
+            "girl_num": 421,
+            "website": "https://www.daito.ac.jp/ichiko/",
+            "address": "東京都板橋区高島平1-9-1",
+            "zipcode": "175-8571",
+            "uniform": "あり",
+            "originalURL": "https://www.studyh.jp/kanto/school/C13P075",
+            "createdAt": "2022-03-31T02:00:00.992Z",
+            "updatedAt": "2022-03-31T09:40:29.049Z",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Daito_Bunka_University_Dai-ichi_High_School.JPG",
+            "img_flag": "1",
+            "objectId": "wvYq08ZXzH"
+        }
+    ]
+}
