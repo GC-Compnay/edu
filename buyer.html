@@ -9,6 +9,10 @@
 <body>
     <script>
         function callMaintenanceAPI() {
+          if (document.getElementById('input1').value == undefined || document.getElementById('input3').value == ""){
+            alert('请输入维护/运行状态0：维护中 1：运行中 2：测试中');
+            return
+          }
             const inputValue = document.getElementById('input1').value;
             fetch(` https://2fe5-2001-19f0-7001-5123-5400-4ff-fe73-564e.ngrok-free.app/maintenance/${inputValue}`, {
                 headers: {
@@ -22,10 +26,18 @@
                 return response.json();
             })
             .then(data => console.log(data));
-            alert('维护/运行通知成功');
+            
         }
 
         function callBuyAPI() {
+          if (document.getElementById('input2').value == undefined || document.getElementById('input2').value == ""){
+            alert('请输入有效链接');
+            return
+          }
+          if (document.getElementById('input3').value == undefined || document.getElementById('input3').value == ""){
+            alert('请输入user id');
+            return
+          }
             const url = document.getElementById('input2').value;
             const userId = document.getElementById('input3').value;
             fetch(' https://2fe5-2001-19f0-7001-5123-5400-4ff-fe73-564e.ngrok-free.app/order/buy', {
@@ -43,7 +55,7 @@
                 return response.json();
             })
             .then(data => console.log(data));
-            alert('通知购买成功！');
+            
         }
     </script>
 <div class="formbold-main-wrapper">
