@@ -1,25 +1,41 @@
+
+
 <!DOCTYPE html>
 <html>
-    <body>
-        <video id="video"></video>
-        <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-        <script>
-            var video = document.getElementById('video');
-            var videoSrc = 'https://stream.vivalavida.studio:8080/hls/learn.m3u8';
-            if(Hls.isSupported()) {
-                var hls = new Hls();
-                hls.loadSource(videoSrc);
-                hls.attachMedia(video);
-                hls.on(Hls.Events.MANIFEST_PARSED, function() {
-                    video.play();
-                });
-            }
-            else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-                video.src = videoSrc;
-                video.addEventListener('loadedmetadata', function() {
-                    video.play();
-                });
-            }
-        </script>
-    </body>
+<head>
+  <title>Video Player</title>
+  <style>
+    #video {
+      width: 800px;
+      height: 450px;
+    }
+  </style>
+</head>
+<body>
+  <div class="App">
+    <video id="video" controls autoplay></video>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  <script>
+    var video = document.getElementById('video');
+    if(Hls.isSupported()) {
+      var hls = new Hls();
+      hls.loadSource('https://stream.vivalavida.studio:8080/hls/learn.m3u8');
+      hls.attachMedia(video);
+      hls.on(Hls.Events.MANIFEST_PARSED,function() {
+        video.play();
+      });
+    }
+    // hls.js is not supported on platforms that do not have Media Source Extensions (MSE) enabled.
+    // When the browser has built-in HLS support (check using `canPlayType`), we can provide the HLS manifest (i.e. .m3u8 URL) directly to the video element through the `src` property.
+    // This is very useful for platforms like iOS, where the devices have built-in HLS support and are therefore likely to be compatible with your HLS streams.
+    else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+      video.src = 'https://stream.vivalavida.studio:8080/hls/learn.m3u8';
+      video.addEventListener('loadedmetadata', function() {
+        video.play();
+      });
+    }
+  </script>
+</body>
 </html>
