@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-dateFormat/1.0/jquery.dateFormat.min.js"></script>
+<script>
+// --------------------------------------------------------------------------------
+// constant
+// --------------------------------------------------------------------------------
+
+// Service ID
+var envs = {
+  "stg" : {
+    "url" : "https://stg-step.payment.rakuten.co.jp",
+    "services" : {
+      "stg-all-webportal" : {
+        "subServiceId" : ["stg-all-webportal"],
+        "hashKey" : "455FD3D78FD5E295C6D3DCD7AFC8D81484CC30BE0DDFA9A1D997C739039024DD"
+      }
+    }
+  }
+};
+
+// API
+var apis = {
+  "payment" : {
+    "url" : "/step/payment/V1",
+    "requestData" : {
+      "serviceId" : "dummy",
+      "subServiceId" : "dummy",
+      "paymentId" : "dummy",
+      "timestamp" : "dummy",
+      "currencyCode" : "JPY",
+      "grossAmount" : 18000,
+      "withCapture": "false",
+      "languageCode" : "ja",
+      "rakutenPoint" : {
+        "redeem" : {
+          "shopName" : "redeem shop name",
+          "shopUrl" : "redeem/shop/url"
+        },
+        "grant" : {
+          "points" : 180,
+          "shopName" : "grant shop name",
+          "shopUrl" : "grant/shop/url"
+        }
+      },
+      "items" : [
+        {
+          "id" : "itemId-01",
+          "name" : "Club Room Men's Shirt (Color: Ruby Red, Size: M)",
+          "price" : 5500,
+          "quantity" : 1
+        },
+        {
+          "id" : "itemId-02",
+          "name" : "Tracy Flat Shoes (Color: Black, Size: 4.5)",
+          "price" : 7500,
+          "quantity" : 1
+        },
+        {
+          "id" : "itemId-03",
+          "name" : "US国内送料+ Int'l 送料",
+          "price" : 5000,
+          "quantity" : 1
+        }
+      ],
+      "custom": {
+        "order" : {
+          "orderNo" : "dummy",
+          "orderDate" : "dummy",
+          "orderStatus" : "1",
+          "shopper" : {
+            "name" : "Rakuten Taro",
+            "emailAddress" : "taro.rakuten@rakuten.net",
+            "memberId" : "12345678"
+          },
+          "items" : [
+            {
+              "id" : "itemId-01",
+              "name" : "Club Room Men's Shirt",
+              "category" : "Men Shirt",
+              "price" : 5500,
+              "quantity" : 1,
+              "color" : "Ruby Red",
+              "size" : "M",
+              "pageUrl" : "https://your.site.rakuten.co.jp/pageUrl?item=4760897",
+              "imageUrl" : "https://your.site.rakuten.co.jp/imageUrl?item=4760897"
+            },
+            {
+              "id" : "itemId-02",
+              "name" : "Tracy Flat Shoes",
+              "category" : "Women Shoes",
+              "price" : 7500,
+              "quantity" : 1,
+              "color" : "Black",
+              "size" : "4.5",
+              "pageUrl" : "https://your.site.rakuten.co.jp/pageUrl?item=4760897",
+              "imageUrl" : "https://your.site.rakuten.co.jp/imageUrl?item=4760897"
+            }
+          ],
+          "shipping" : [
+            {
+              "shippingFee" : 5000,
+              "receiver" : {
+                "name" : "Rakuten Jiro",
+                "phone" : "+81-50-5581-6910",
+                "postalCode" : "158-0094",
+                "address" : "Rakuten Crimson House, 1-14-1 Tamagawa, Setagaya-ku, Tokyo"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "createJson" : function(now) {
+      updateJsonItem("serviceId", "stg-all-webportal");
+      updateJsonItem("subServiceId", "stg-all-webportal");
+      updateJsonItem("paymentId", "paymentId" + $.format.date(now, "yyyyMMddHHmmssSSS"));
+
+      updateJsonItem("custom.order.orderNo", "orderNo" + $.format.date(now, "yyyyMMddHHmmssSSS"));
+      updateJsonItem("custom.order.orderDate", $.format.date(now, "yyyy-MM-dd HH:mm:ss"));
+    }
+  }
+}
+
+// --------------------------------------------------------------------------------
+// function (biz)
+// --------------------------------------------------------------------------------
+
+function getSelectedEnv() {
+  return envs['stg'];
+}
+
+function getSelectedService() {
+  let env = getSelectedEnv();
+  return env['services']['stg-all-webportal'];
+}
+
+function getSelectedApi() {
+  let apiName = "payment";
+  return apis[apiName];
+}
+
+function createEnvList() {
+  $("#env option").remove();
+
+  for(let env in envs) {
+    $('#env').append($("<option>", {value: env, text: env}));
+  }
+}
+
+function createApiList() {
+  $("#api option").remove();
+
+  for (let api in apis) {
+    $('#api').append($("<option>", {value: api, text: api}));
+  }
+}
+
+function createServiceIdList() {
+  $("#serviceId option").remove();
+
+  let env = getSelectedEnv();
+  for (let service in env['services']) {
+    $('#serviceId').append($("<option>", {value: service, text: service}));
+  }
+};
+
+function createSubServiceIdList() {
+  $("#subServiceId option").remove();
+
+  let service = getSelectedService();
+  for (let i in service['subServiceId']) {
+    $('#subServiceId').append($("<option>", {value: service['subServiceId'][i], text: service['subServiceId'][i]}));
+  }
+};
+
+function createUrl() {
+  $("#url").val(getSelectedEnv().url + apis[$("#api").val()].url);
+}
+
+function createJson() {
+  try {
+    let api = getSelectedApi();
+    let json = api['requestData'];
+
+    $("#jsonStr").val(JSON.stringify(json, null, 2));
+
+    let now = getCurrentDateTime();
+    api['createJson'](now);
+
+    updateTimestamp(now);
+  } catch (ex) {
+    alert("JSON parse error:\n" + ex);
+  }
+}
+
+function createPaymentInfoAndSignature() {
+  let json = JSON.parse($("#jsonStr").val());
+  let jsonStr = JSON.stringify(json, null, 2);
+
+  let base64ed = CryptoJS.enc.Base64.stringify(CryptoJS.enc.Utf8.parse(jsonStr));
+  $("#paymentInfo").val(base64ed);
+
+  let hash = null;
+  try {
+    let hashKey = getSelectedService()['hashKey'];
+    hash = CryptoJS.HmacSHA256(jsonStr, hashKey);
+  } catch (ex) {
+    hash = 'error:' + ex;
+  }
+  $("#signature").val(hash);
+}
+
+function getCurrentDateTime() {
+  let now = new Date();
+  if ($("#env").val() != 'local') {
+    // UTC
+    now = new Date(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(),  now.getUTCHours(), now.getUTCMinutes(), now.getUTCSeconds(), now.getUTCMilliseconds());
+  }
+  return now;
+}
+
+function submitForm() {
+  $("#form").attr('action', $("#url").val());
+  $("#form").submit();
+}
+
+function getJsonItem(name) {
+  try {
+    let json = JSON.parse($("#jsonStr").val());
+    let ret = eval("json." + name + ";");
+    return ret;
+  } catch (ex) {
+    alert("JSON parse error:\n" + ex);
+  }
+}
+
+function updateJsonItem(name, value) {
+  try {
+    let json = JSON.parse($("#jsonStr").val());
+    if (value != null) {
+      eval("json." + name + " = value;");
+    } else {
+      eval("delete json." + name + ";");
+    }
+    $("#jsonStr").val(JSON.stringify(json, null, 2));
+  } catch (ex) {
+    alert("JSON parse error:\n" + ex);
+  }
+}
+
+function deleteJsonItem(name) {
+  updateJsonItem(name, null);
+}
+
+function updateTimestamp(now) {
+  updateJsonItem("timestamp", $.format.date(now, "yyyy-MM-dd HH:mm:ss.000"));
+}
+
+// --------------------------------------------------------------------------------
+// onload
+// --------------------------------------------------------------------------------
+
+window.onload = function() {
+  $("#env").change(function() {
+    createServiceIdList();
+    $("#serviceId").change();
+  });
+
+  $("#serviceId").change(function() {
+    createSubServiceIdList();
+    $("#subServiceId").change();
+  });
+
+  $("#subServiceId").change(function() {
+    $("#api").change();
+  });
+
+  $("#api").change(function() {
+    createUrl();
+  });
+
+  $('#submit').on('click', function() {
+    submitForm();
+  });
+
+  $('#updateTimestamp').on('click', function() {
+    updateTimestamp(getCurrentDateTime());
+    createPaymentInfoAndSignature();
+  });
+
+  $('#reset').on('click', function() {
+    createJson();
+    createPaymentInfoAndSignature();
+  });
+
+  $("#jsonStr").keyup(function() {
+    createPaymentInfoAndSignature();
+  })
+
+  createEnvList();
+  createApiList();
+
+  $("#env").change();
+  $("#api").change();
+
+  $("#reset").click();
+}
+</script>
+</head>
+<body>
+
+<h2>STG Payment Step Form</h2>
+
+<form id="form" name="form" method="post" target="_blank" action="https://stg-step.payment.rakuten.co.jp/step/payment/V1">
+  <label for="paymentInfo">PaymentInfo:</label><br>
+  <textarea id="paymentInfo" name="paymentInfo" rows="30" cols="80">ewogICJzZXJ2aWNlSWQiOiAic3RnLWFsbC13ZWJwb3J0YWwiLAogICJzdWJTZXJ2aWNlSWQiOiAic3RnLWFsbC13ZWJwb3J0YWwiLAogICJwYXltZW50SWQiOiAicGF5bWVudElkMjAyMzExMTMwMzQ1MjIiLAogICJ0aW1lc3RhbXAiOiAiMjAyMy0xMS0xMyAwMzo0NToyMi4wMDAiLAogICJjdXJyZW5jeUNvZGUiOiAiSlBZIiwKICAiZ3Jvc3NBbW91bnQiOiAxODAwMCwKICAid2l0aENhcHR1cmUiOiAiZmFsc2UiLAogICJsYW5ndWFnZUNvZGUiOiAiamEiLAogICJyYWt1dGVuUG9pbnQiOiB7CiAgICAicmVkZWVtIjogewogICAgICAic2hvcE5hbWUiOiAicmVkZWVtIHNob3AgbmFtZSIsCiAgICAgICJzaG9wVXJsIjogInJlZGVlbS9zaG9wL3VybCIKICAgIH0sCiAgICAiZ3JhbnQiOiB7CiAgICAgICJwb2ludHMiOiAxODAsCiAgICAgICJzaG9wTmFtZSI6ICJncmFudCBzaG9wIG5hbWUiLAogICAgICAic2hvcFVybCI6ICJncmFudC9zaG9wL3VybCIKICAgIH0KICB9LAogICJpdGVtcyI6IFsKICAgIHsKICAgICAgImlkIjogIml0ZW1JZC0wMSIsCiAgICAgICJuYW1lIjogIkNsdWIgUm9vbSBNZW4ncyBTaGlydCAoQ29sb3I6IFJ1YnkgUmVkLCBTaXplOiBNKSIsCiAgICAgICJwcmljZSI6IDU1MDAsCiAgICAgICJxdWFudGl0eSI6IDEKICAgIH0sCiAgICB7CiAgICAgICJpZCI6ICJpdGVtSWQtMDIiLAogICAgICAibmFtZSI6ICJUcmFjeSBGbGF0IFNob2VzIChDb2xvcjogQmxhY2ssIFNpemU6IDQuNSkiLAogICAgICAicHJpY2UiOiA3NTAwLAogICAgICAicXVhbnRpdHkiOiAxCiAgICB9LAogICAgewogICAgICAiaWQiOiAiaXRlbUlkLTAzIiwKICAgICAgIm5hbWUiOiAiVVPlm73lhoXpgIHmlpkrIEludCdsIOmAgeaWmSIsCiAgICAgICJwcmljZSI6IDUwMDAsCiAgICAgICJxdWFudGl0eSI6IDEKICAgIH0KICBdLAogICJjdXN0b20iOiB7CiAgICAib3JkZXIiOiB7CiAgICAgICJvcmRlck5vIjogIm9yZGVyTm8yMDIzMTExMzAzNDUyMiIsCiAgICAgICJvcmRlckRhdGUiOiAiMjAyMy0xMS0xMyAwMzo0NToyMiIsCiAgICAgICJvcmRlclN0YXR1cyI6ICIxIiwKICAgICAgInNob3BwZXIiOiB7CiAgICAgICAgIm5hbWUiOiAiUmFrdXRlbiBUYXJvIiwKICAgICAgICAiZW1haWxBZGRyZXNzIjogInRhcm8ucmFrdXRlbkByYWt1dGVuLm5ldCIsCiAgICAgICAgIm1lbWJlcklkIjogIjEyMzQ1Njc4IgogICAgICB9LAogICAgICAiaXRlbXMiOiBbCiAgICAgICAgewogICAgICAgICAgImlkIjogIml0ZW1JZC0wMSIsCiAgICAgICAgICAibmFtZSI6ICJDbHViIFJvb20gTWVuJ3MgU2hpcnQiLAogICAgICAgICAgImNhdGVnb3J5IjogIk1lbiBTaGlydCIsCiAgICAgICAgICAicHJpY2UiOiA1NTAwLAogICAgICAgICAgInF1YW50aXR5IjogMSwKICAgICAgICAgICJjb2xvciI6ICJSdWJ5IFJlZCIsCiAgICAgICAgICAic2l6ZSI6ICJNIiwKICAgICAgICAgICJwYWdlVXJsIjogImh0dHBzOi8veW91ci5zaXRlLnJha3V0ZW4uY28uanAvcGFnZVVybD9pdGVtPTQ3NjA4OTciLAogICAgICAgICAgImltYWdlVXJsIjogImh0dHBzOi8veW91ci5zaXRlLnJha3V0ZW4uY28uanAvaW1hZ2VVcmw/aXRlbT00NzYwODk3IgogICAgICAgIH0sCiAgICAgICAgewogICAgICAgICAgImlkIjogIml0ZW1JZC0wMiIsCiAgICAgICAgICAibmFtZSI6ICJUcmFjeSBGbGF0IFNob2VzIiwKICAgICAgICAgICJjYXRlZ29yeSI6ICJXb21lbiBTaG9lcyIsCiAgICAgICAgICAicHJpY2UiOiA3NTAwLAogICAgICAgICAgInF1YW50aXR5IjogMSwKICAgICAgICAgICJjb2xvciI6ICJCbGFjayIsCiAgICAgICAgICAic2l6ZSI6ICI0LjUiLAogICAgICAgICAgInBhZ2VVcmwiOiAiaHR0cHM6Ly95b3VyLnNpdGUucmFrdXRlbi5jby5qcC9wYWdlVXJsP2l0ZW09NDc2MDg5NyIsCiAgICAgICAgICAiaW1hZ2VVcmwiOiAiaHR0cHM6Ly95b3VyLnNpdGUucmFrdXRlbi5jby5qcC9pbWFnZVVybD9pdGVtPTQ3NjA4OTciCiAgICAgICAgfQogICAgICBdLAogICAgICAic2hpcHBpbmciOiBbCiAgICAgICAgewogICAgICAgICAgInNoaXBwaW5nRmVlIjogNTAwMCwKICAgICAgICAgICJyZWNlaXZlciI6IHsKICAgICAgICAgICAgIm5hbWUiOiAiUmFrdXRlbiBKaXJvIiwKICAgICAgICAgICAgInBob25lIjogIis4MS01MC01NTgxLTY5MTAiLAogICAgICAgICAgICAicG9zdGFsQ29kZSI6ICIxNTgtMDA5NCIsCiAgICAgICAgICAgICJhZGRyZXNzIjogIlJha3V0ZW4gQ3JpbXNvbiBIb3VzZSwgMS0xNC0xIFRhbWFnYXdhLCBTZXRhZ2F5YS1rdSwgVG9reW8iCiAgICAgICAgICB9CiAgICAgICAgfQogICAgICBdCiAgICB9CiAgfQp9</textarea><br>
+  <label for="signature">Signature:</label><br>
+  <input type="text" size="80" id="signature" name="signature" value="5234003ca208343ea7f4d9ca91e42aef138c3d979561f93f12f8554885a16244">
+  <div>
+    <input type="submit" value="Submit">
+    <input type="button" id="reset" value="Reset">
+  </div>
+</form>
+
+<div>
+	<textarea style="display:none" id="jsonStr" name="jsonStr" class="form-control" rows="32"></textarea>
+</div>
+</body>
+</html>
