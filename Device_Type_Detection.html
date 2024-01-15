@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Device Type Detection</title>
+</head>
+<body>
+    <h1>Device Type Check</h1>
+    <p id="deviceType"></p>
+
+    <script>
+        function checkDeviceType() {
+            const userAgent = navigator.userAgent;
+            if (/mobile/i.test(userAgent)) {
+                return "Mobile";
+            } else {
+                return "Desktop";
+            }
+        }
+
+        document.getElementById('deviceType').innerHTML = "Current Device is: " + checkDeviceType();
+    </script>
+</body>
+</html>
