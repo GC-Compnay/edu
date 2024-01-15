@@ -26,7 +26,7 @@
 
             return isAndroidWebView || isIOSWebView ? "WebView" : "Regular Browser";
         }
-        document.getElementById('userAgent').innerHTML = "UA: " + userAgent;
+        document.getElementById('userAgent').innerHTML = "UA: " + navigator.userAgent.toLowerCase();
         document.getElementById('deviceType').innerHTML = "当前设备是: " + checkDeviceType();
         document.getElementById('webViewCheck').innerHTML = "浏览器环境: " + checkIfWebView();
     </script>
