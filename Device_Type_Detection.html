@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Device Type Detection</title>
+    <title>Device and WebView Detection</title>
 </head>
 <body>
-    <h1>Device Type Check</h1>
+    <h1>Device and Environment Check</h1>
     <p id="deviceType"></p>
+    <p id="webViewCheck"></p>
 
     <script>
         function checkDeviceType() {
@@ -17,7 +18,16 @@
             }
         }
 
-        document.getElementById('deviceType').innerHTML = "Current Device is: " + checkDeviceType();
+        function checkIfWebView() {
+            const userAgent = navigator.userAgent.toLowerCase();
+            const isAndroidWebView = userAgent.indexOf('wv') > -1 && /android/i.test(userAgent);
+            const isIOSWebView = /(iPhone|iPod|iPad).*AppleWebKit(?!.*Safari)/i.test(userAgent);
+
+            return isAndroidWebView || isIOSWebView ? "WebView" : "Regular Browser";
+        }
+
+        document.getElementById('deviceType').innerHTML = "当前设备是: " + checkDeviceType();
+        document.getElementById('webViewCheck').innerHTML = "浏览器环境: " + checkIfWebView();
     </script>
 </body>
 </html>
