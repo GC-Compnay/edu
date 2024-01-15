@@ -6,7 +6,7 @@
 <body>
     <h1>Device and Environment Check</h1>
     <p id="userAgent"></p> 
-    <p id="liffStatus">检测中...</p>
+    
 
     <p id="deviceType"></p>
     <p id="webViewCheck"></p>
@@ -24,7 +24,7 @@
         function checkIfWebView() {
             const userAgent = navigator.userAgent.toLowerCase();
             const isAndroidWebView = userAgent.indexOf('wv') > -1 && /android/i.test(userAgent);
-            const isIOSWebView = /(iPhone|iPod|iPad).*AppleWebKit(?!.*Safari)/i.test(userAgent);
+            const isIOSWebView = /(iphone|iPhone|iPod|iPad).*AppleWebKit(?!.*Safari)/i.test(userAgent);
 
             return isAndroidWebView || isIOSWebView ? "WebView" : "Regular Browser";
         }
@@ -37,7 +37,7 @@
             }
         }
 
-        document.getElementById('liffStatus').textContent = checkLiff();
+        //document.getElementById('liffStatus').textContent = checkLiff();
 
 
 
