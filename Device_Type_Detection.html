@@ -6,6 +6,8 @@
 <body>
     <h1>Device and Environment Check</h1>
     <p id="userAgent"></p> 
+    <p id="liffStatus">检测中...</p>
+
     <p id="deviceType"></p>
     <p id="webViewCheck"></p>
 
@@ -26,6 +28,19 @@
 
             return isAndroidWebView || isIOSWebView ? "WebView" : "Regular Browser";
         }
+
+        function checkLiff() {
+            if (window.liff) {
+                return "这是 LIFF 浏览器";
+            } else {
+                return "这不是 LIFF 浏览器";
+            }
+        }
+
+        document.getElementById('liffStatus').textContent = checkLiff();
+
+
+
         document.getElementById('userAgent').innerHTML = "UA: " + navigator.userAgent.toLowerCase();
         document.getElementById('deviceType').innerHTML = "当前设备是: " + checkDeviceType();
         document.getElementById('webViewCheck').innerHTML = "浏览器环境: " + checkIfWebView();
