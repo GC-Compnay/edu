@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Device and WebView Detection</title>
+</head>
+<body>
+    <h1>Device and Environment Check</h1>
+    <p id="userAgent"></p> 
+
+
+    <p id="deviceType"></p>
+    <p id="webViewCheck"></p>
+
+    <script>
+        function checkDeviceType() {
+            const userAgent = navigator.userAgent;
+            if (/mobile/i.test(userAgent)) {
+                return "Mobile";
+            } else {
+                return "Desktop";
+            }
+        }
+
+        function checkIfWebView() {
+            const userAgent = navigator.userAgent.toLowerCase();
+            const isAndroidWebView = userAgent.includes('wv') && userAgent.includes('android');
+            const isIOSWebView = userAgent.includes('iphone') && userAgent.includes('safari line');
+            const isLineWebView = userAgent.includes('safari line');
+
+            return isAndroidWebView || isIOSWebView || isLineWebView ? "WebView" : "Regular Browser";
+        }
+
+
+   
+
+
+
+        document.getElementById('userAgent').innerHTML = "UA: " + navigator.userAgent.toLowerCase();
+        // document.getElementById('deviceType').innerHTML = "当前设备是: " + checkDeviceType();
+        // document.getElementById('webViewCheck').innerHTML = "浏览器环境: " + checkIfWebView();
+    </script>
+</body>
+</html>
