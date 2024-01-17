@@ -2,27 +2,36 @@
 <html>
 <head>
     <title>访问摄像头</title>
+    <style>
+        #video {
+            width: 100%;    /* 视频宽度填满屏幕宽度 */
+            height: 50vh;   /* 视频高度为视口高度的50% */
+            object-fit: cover; /* 防止视频被拉伸或压缩 */
+        }
+    </style>
 </head>
 <body>
 
 <h1>使用摄像头</h1>
 
 <button id="startCamera">启动摄像头</button>
-<video id="video" width="640" height="480" autoplay></video>
+<video id="video" autoplay></video>
 
 <script>
     const video = document.getElementById('video');
     const button = document.getElementById('startCamera');
 
     button.onclick = function() {
-        if (navigator.mediaDevices.getUserMedia) {
+        if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
             navigator.mediaDevices.getUserMedia({ video: true })
                 .then(function(stream) {
                     video.srcObject = stream;
                 })
                 .catch(function(error) {
-                    console.log("获取摄像头时发生错误: ", error);
+                    console.error("获取摄像头时发生错误: ", error);
                 });
+        } else {
+            console.error("浏览器不支持 getUserMedia API 或没有配置正确的权限。");
         }
     };
 </script>
