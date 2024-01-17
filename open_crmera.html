@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Camera Access</title>
+</head>
+<body>
+
+<h1>访问相机</h1>
+
+<!-- 相机访问按钮 -->
+<input type="file" accept="image/*" capture="camera" id="cameraInput">
+
+<script>
+    // 你可以在这里添加 JavaScript 以处理拍摄的照片
+    document.getElementById('cameraInput').onchange = function(event) {
+        // 当图片被选中后，可以在这里处理
+        var file = event.target.files[0];
+        // 例如，可以显示图片预览
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            var img = document.createElement('img');
+            img.src = e.target.result;
+            document.body.appendChild(img);
+        };
+        reader.readAsDataURL(file);
+    };
+</script>
+
+</body>
+</html>
