@@ -2,80 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Search Text in PDF using PDF.js</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.12.313/pdf.min.js"></script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Viewer with Search</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.7.570/pdf.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-    <h1>Search Text in PDF</h1>
-    <input type="text" id="searchTerm" placeholder="Enter text to search">
-    <button onclick="searchText()">Search</button>
-    <canvas id="the-canvas"></canvas>
-
-    <script>
-        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.12.313/pdf.worker.min.js';
-
-        var url = 'https://dev-dp-ct.grandchallenge.co.jp/document/pamphlet/7568000-2-2/book.pdf';  // 指定PDF文件的路径
-
-        let pdfDoc = null;
-        let pageNum = 1;
-        let pageRendering = false;
-        let canvas = document.getElementById('the-canvas');
-        let ctx = canvas.getContext('2d');
-
-        function renderPage(num) {
-            pageRendering = true;
-            // Using promise to fetch the page
-            pdfDoc.getPage(num).then(function(page) {
-                var scale = 1.5;
-                var viewport = page.getViewport({ scale: scale });
-                canvas.height = viewport.height;
-                canvas.width = viewport.width;
-
-                // Render PDF page into canvas context
-                var renderTask = page.render({
-                    canvasContext: ctx,
-                    viewport: viewport
-                });
-
-                renderTask.promise.then(function() {
-                    pageRendering = false;
-                });
-            });
-        }
-
-        // Load PDF
-        pdfjsLib.getDocument(url).promise.then(function(pdfDoc_) {
-            pdfDoc = pdfDoc_;
-            renderPage(pageNum);
-        });
-
-        function searchText() {
-            let searchTerm = document.getElementById('searchTerm').value.trim();
-            if (!searchTerm) {
-                alert('Please enter a term to search.');
-                return;
-            }
-console.log(searchTerm);
-            pdfDoc.getPage(1).then(function(page) {
-                return page.getTextContent();
-            }).then(function(textContent) {
-                let textItems = textContent.items;
-                let searchResults = textItems.filter(item => item.str.includes(searchTerm));
-                
-                let resultsContainer = document.getElementById('results');
-                resultsContainer.innerHTML = ''; // Clear previous results
-                searchResults.forEach(function(item, index) {
-                    let elem = document.createElement('div');
-                    elem.textContent = `Result ${index + 1}: ${item.str}`;
-                    resultsContainer.appendChild(elem);
-                });
-            });
-        }
-    </script>
+    <canvas id="pdf-canvas"></canvas>
+    <input type="text" id="search-box" placeholder="Enter search text">
+    <button id="search-button">Search</button>
+    <script src="script.js"></script>
 </body>
 </html>
