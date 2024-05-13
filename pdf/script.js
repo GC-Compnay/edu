@@ -8,7 +8,7 @@ $(document).ready(function() {
     // https://github.com/bing-deng/Demo/blob/master/book.pdf?raw=true
     // https://pamphlet-reha.adplat.jp/document/pamphlet/4867000-2-2-0/book.pdf
     // https://pamphlet2reader.adplat.jp/doc/4177600-0-1-3/book.pdf
-    pdfjsLib.getDocument('https://github.com/bing-deng/Demo/blob/master/book.pdf?raw=true').promise.then(function(doc) {
+    pdfjsLib.getDocument('./book.pdf').promise.then(function(doc) {
         pdfDoc = doc;
         renderPage(pageNum);
     });
