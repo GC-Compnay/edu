@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stripe Checkout</title>
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+    <button id="checkout-button">Pay Now</button>
+    <button id="subscription-button">Subscribe</button>
+
+    <script>
+        // 单次支付
+        document.getElementById('checkout-button').addEventListener('click', async () => {
+            try {
+                const response = await fetch('https://d8c1-119-242-132-92.ngrok-free.app/api/checkout/create-session', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        priceId: 'price_1Qe5WqQIOTbdD8kHhhJPSHig' // 你的价格ID
+                    })
+                });
+                
+                const data = await response.json();
+                window.location.href = data.url;
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        });
+
+        // 订阅支付
+        document.getElementById('subscription-button').addEventListener('click', async () => {
+            try {
+                const response = await fetch('/api/checkout/create-subscription', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        priceId: 'price_H5ggYwtDq4fbrJ' // 你的订阅价格ID
+                    })
+                });
+                
+                const data = await response.json();
+                window.location.href = data.url;
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        });
+    </script>
+</body>
+</html>
